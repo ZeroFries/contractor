@@ -86,9 +86,9 @@ ActiveRecord::Schema.define(version: 20170401172521) do
   create_table "notes", force: :cascade do |t|
     t.integer "project_id"
     t.text    "content"
-    t.integer "created_by"
-    t.index ["created_by"], name: "index_notes_on_created_by", using: :btree
+    t.integer "user_id"
     t.index ["project_id"], name: "index_notes_on_project_id", using: :btree
+    t.index ["user_id"], name: "index_notes_on_user_id", using: :btree
   end
 
   create_table "notifications", force: :cascade do |t|
