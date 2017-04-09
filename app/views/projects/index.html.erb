@@ -1,0 +1,14 @@
+<h1>Your Projects</h1>
+
+<%= @projects.each_slice(3) do |three_projects| %>
+  <div class="row">
+    <% three_projects.each do |project| %>
+      <div class="col-md-4">
+        <%= button_to project.name, {
+          controller: :project_sessions, 
+          action: :create, 
+          project_id: project.id
+        }, class: "btn btn-default btn-answer", method: :post %>  
+      </div>
+    <% end %>
+<% end %>

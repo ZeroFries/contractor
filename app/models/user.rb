@@ -26,4 +26,8 @@ class User < ApplicationRecord
   def trade_for(project_id)
   	project_user_for(project_id).trade
   end
+
+  def role_for(project_id)
+    project_user_for(project_id).role
+  end
 end
